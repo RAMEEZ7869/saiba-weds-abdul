@@ -9,12 +9,24 @@
     <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 
     <!-- 2. OFFICIAL WHATSAPP PREVIEW CARDS (NEVER LOOKS LIKE SPAM) -->
-    <title>Saiba Weds Abdul Kalam | Royal Wedding Invitation</title>
-    <meta name="title" content="Saiba Weds Abdul Kalam | Royal Wedding Invitation">
-    <meta name="description" content="Wedding Ceremony & Programme Invitation | Venue: Hotel Blue Diamond, Pugmil, Hazaribagh">
+    <title>Wedding Invitation from Mannuar Ansari | Saiba Weds Abdul</title>
+    <meta name="title" content="Wedding Invitation from Mannuar Ansari | Saiba Weds Abdul">
+    <meta name="description" content="Wedding Ceremony & Programme Invitation of Saiba Perween & Abdul Kalam | Venue: Hotel Blue Diamond, Pugmil, Hazaribagh">
+    
+    <!-- Open Graph (WhatsApp, Facebook, Telegram Preview) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Saiba Weds Abdul Kalam | Official Wedding Invitation">
-    <meta property="og:description" content="Official Wedding Ceremony Invitation | 30 Nov – 03 Dec 2026. Tap to open the Royal Palace Invitation.">
+    <meta property="og:url" content="https://rameez7869.github.io/saiba-weds-abdul/">
+    <meta property="og:title" content="Wedding Invitation from Mannuar Ansari | Saiba Weds Abdul">
+    <meta property="og:description" content="Wedding Ceremony Invitation (30 Nov – 03 Dec 2026) | Venue: Hotel Blue Diamond, Pugmil, Hazaribagh. Tap to open the Royal Palace Invitation.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&h=630&q=85">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wedding Invitation from Mannuar Ansari | Saiba Weds Abdul">
+    <meta name="twitter:description" content="Wedding Ceremony of Saiba Perween & Abdul Kalam | Venue: Hotel Blue Diamond, Pugmil, Hazaribagh.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&h=630&q=85">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,7 +73,6 @@
             user-select: none;
         }
 
-        /* Ambient Lighting Blooms */
         .glow-bloom-top {
             position: fixed;
             top: -15vw;
@@ -92,9 +103,6 @@
             z-index: 1;
         }
 
-        /* ======================================================== */
-        /* ROYAL PALACE 3D DOUBLE-GATE WITH VIP PASSCODE            */
-        /* ======================================================== */
         .palace-gate-overlay {
             position: fixed;
             inset: 0;
@@ -221,7 +229,6 @@
             transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
         }
 
-        /* Beating Hearts Animation */
         @keyframes heartBeating {
             0% { transform: scale(1); }
             14% { transform: scale(1.28); }
@@ -238,7 +245,6 @@
             margin: 0 10px;
         }
 
-        /* Editorial Layout */
         .main-stage {
             position: relative;
             z-index: 10;
@@ -271,7 +277,6 @@
             transform: translateY(-2px);
         }
 
-        /* Floating Fast Controls */
         .floating-hub {
             position: fixed;
             bottom: 24px;
@@ -306,7 +311,6 @@
             box-shadow: 0 0 25px rgba(230, 192, 100, 0.8);
         }
 
-        /* Chronological Timeline */
         .timeline-container {
             max-width: 650px;
             margin: 0 auto;
@@ -348,7 +352,6 @@
             border-left-color: transparent;
         }
 
-        /* Buttons */
         .btn-royal {
             display: inline-flex;
             align-items: center;
@@ -388,7 +391,6 @@
             border-color: var(--gold-primary);
         }
 
-        /* Interactive Scratch Card */
         .scratch-card-wrapper {
             position: relative;
             width: 320px;
@@ -421,7 +423,6 @@
             touch-action: none;
         }
 
-        /* Modal Preview */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -460,27 +461,17 @@
 </head>
 <body>
 
-    <!-- Ambient Glowing Nebulas -->
     <div class="glow-bloom-top"></div>
     <div class="glow-bloom-bottom"></div>
-
-    <!-- Animated Petal Canvas -->
     <canvas id="petalCanvas"></canvas>
 
-    <!-- ======================================================== -->
     <!-- 1. ROYAL PALACE 3D DOUBLE-GATE ENTRANCE (1-TAP WAX SEAL) -->
-    <!-- ======================================================== -->
     <div class="palace-gate-overlay" id="gateOverlay">
-        
         <div class="gate-door gate-left"></div>
-
         <div class="gate-emblem-trigger" id="gateEmblemContainer">
-            
             <div style="font-family: 'Cinzel', serif; font-size: 0.82rem; letter-spacing: 4px; text-transform: uppercase; color: var(--rose-blush); margin-bottom: 20px; text-shadow: 0 2px 8px rgba(0,0,0,0.9);">
                 A Sacred Wedding Invitation
             </div>
-
-            <!-- Glowing Wax Seal Monogram (1-Tap Entry) -->
             <div class="wax-seal-medallion seal-button-clickable" onclick="openPalaceGate()" title="Tap To Enter">
                 <span style="font-family: 'Cinzel Decorative', serif; font-size: 2rem; font-weight: 900; color: #1a1002; letter-spacing: 2px;">
                     S & A
@@ -489,22 +480,17 @@
                     The Royal Gate
                 </span>
             </div>
-
             <button onclick="openPalaceGate()" class="btn-royal btn-gold" style="padding: 12px 34px; font-size: 0.86rem; margin-top: 10px; box-shadow: 0 0 25px rgba(230, 192, 100, 0.6);">
                 <i class="fa-solid fa-envelope-open-text"></i> Tap Wax Seal To Enter
             </button>
-
             <p style="font-size: 0.82rem; color: var(--rose-dust); margin-top: 22px; letter-spacing: 1.5px; font-weight: 500;">
                 Developed by Rameez Jilani
             </p>
         </div>
-
         <div class="gate-door gate-right"></div>
     </div>
 
-    <!-- ======================================================== -->
-    <!-- FLOATING FAST CONTROLS                                   -->
-    <!-- ======================================================== -->
+    <!-- FLOATING FAST CONTROLS -->
     <div class="floating-hub">
         <button class="floating-btn" id="musicToggleBtn" onclick="toggleAudio()" title="Soundtrack Play/Pause">
             <i class="fa-solid fa-volume-high" id="musicIcon"></i>
@@ -520,12 +506,9 @@
         </a>
     </div>
 
-    <!-- ======================================================== -->
-    <!-- MAIN INVITATION STAGE                                    -->
-    <!-- ======================================================== -->
+    <!-- MAIN INVITATION STAGE -->
     <main class="main-stage">
 
-        <!-- 1. Bismillah SVG & Calligraphy Header -->
         <header class="text-center" style="margin-bottom: 45px; text-align: center;">
             <div style="font-family: 'Amiri', serif; font-size: 3.2rem; color: var(--gold-shimmer); line-height: 1.3; text-shadow: 0 4px 25px rgba(230, 192, 100, 0.45);">
                 بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
@@ -535,7 +518,6 @@
             </p>
         </header>
 
-        <!-- 2. Quranic Verse (Surah Ar-Rum 30:21) -->
         <section style="max-width: 720px; margin: 0 auto 55px; padding: 25px 20px; border-top: 1px solid rgba(230, 192, 100, 0.25); border-bottom: 1px solid rgba(230, 192, 100, 0.25); text-align: center;">
             <p style="font-family: 'Amiri', serif; font-size: 1.65rem; color: var(--gold-shimmer); line-height: 2; direction: rtl; margin-bottom: 12px;">
                 « وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً »
@@ -548,7 +530,6 @@
             </span>
         </section>
 
-        <!-- 3. Cordial Invitation from Host Parents -->
         <section style="text-align: center; margin-bottom: 60px;">
             <p style="font-size: 0.84rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold-primary); font-weight: 600;">
                 Soliciting The Pleasure Of Your Gracious Presence
@@ -561,9 +542,7 @@
             </p>
         </section>
 
-        <!-- 4. The Bride & Groom Spotlight with Beating Love Hearts -->
         <section style="text-align: center; margin-bottom: 75px;">
-            <!-- Bride -->
             <div>
                 <h1 class="hero-title" style="font-family: 'Great Vibes', cursive; font-size: 5.4rem; color: #ffffff; text-shadow: 0 4px 25px rgba(230, 192, 100, 0.45); line-height: 1.1;">
                     Saiba Perween
@@ -572,11 +551,10 @@
                     D/o Md. Mannuar Ansari
                 </p>
                 <p style="font-size: 0.82rem; color: #9bb7a5; margin-top: 3px;">
-                    Al-Falah Colony, Pugmil, Dist- Hazaribagh (Jharkhand)
+                    Al-Falah Colony, Road No 6, Pugmil, Dist- Hazaribagh (Jharkhand)
                 </p>
             </div>
 
-            <!-- Weds Connector with Beating Love Hearts -->
             <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin: 28px auto;">
                 <span style="height: 1px; width: 75px; background: linear-gradient(90deg, transparent, var(--gold-primary));"></span>
                 <i class="fas fa-heart beating-heart"></i>
@@ -585,7 +563,6 @@
                 <span style="height: 1px; width: 75px; background: linear-gradient(-90deg, transparent, var(--gold-primary));"></span>
             </div>
 
-            <!-- Groom -->
             <div>
                 <h1 class="hero-title" style="font-family: 'Great Vibes', cursive; font-size: 5.4rem; color: #ffffff; text-shadow: 0 4px 25px rgba(230, 192, 100, 0.45); line-height: 1.1;">
                     Abdul Kalam
@@ -599,7 +576,7 @@
             </div>
         </section>
 
-        <!-- 5. Exact Live Barat Countdown Timer (Dec 2, 2026 at 10:00 PM) -->
+        <!-- LIVE COUNTDOWN -->
         <section style="text-align: center; margin-bottom: 85px;">
             <span style="font-size: 0.76rem; text-transform: uppercase; letter-spacing: 3px; color: var(--rose-dust); font-weight: 600;">
                 Counting Every Sacred Second
@@ -636,10 +613,9 @@
             </p>
         </section>
 
-        <!-- Divider -->
         <div class="gold-divider"></div>
 
-        <!-- 6. Ceremonial Programme Schedule -->
+        <!-- PROGRAMME -->
         <section style="margin-bottom: 90px;">
             <div style="text-align: center; margin-bottom: 50px;">
                 <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold-primary); font-weight: 600;">
@@ -651,8 +627,6 @@
             </div>
 
             <div class="timeline-container">
-                
-                <!-- Day 1 -->
                 <div class="timeline-item">
                     <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--rose-dust); font-weight: 600;">
                         Monday, 30th November 2026 • At Residence
@@ -666,7 +640,6 @@
                     </p>
                 </div>
 
-                <!-- Day 2 -->
                 <div class="timeline-item">
                     <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--rose-dust); font-weight: 600;">
                         Tuesday, 1st December 2026 • At Residence
@@ -679,7 +652,6 @@
                     </p>
                 </div>
 
-                <!-- Day 3 (Main Events) -->
                 <div class="timeline-item highlight-event">
                     <span style="font-size: 0.76rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold-primary); font-weight: 700;">
                         Wednesday, 2nd December 2026 • At Hotel Blue Diamond
@@ -694,7 +666,6 @@
                     </p>
                 </div>
 
-                <!-- Day 4 -->
                 <div class="timeline-item">
                     <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--rose-dust); font-weight: 600;">
                         Thursday, 3rd December 2026
@@ -706,14 +677,12 @@
                         • Bidding farewell with eternal prayers: <strong style="color: var(--gold-shimmer);">07:00 AM</strong>
                     </p>
                 </div>
-
             </div>
         </section>
 
-        <!-- Divider -->
         <div class="gold-divider"></div>
 
-        <!-- 7. Venues & Maps (Organized into 2 Distinct Cards) -->
+        <!-- 7. VENUES & MAPS (UPDATED WITH EXACT ROAD NO 6 LINK) -->
         <section style="margin-bottom: 90px;">
             <div style="text-align: center; margin-bottom: 40px;">
                 <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold-primary); font-weight: 600;">
@@ -724,7 +693,7 @@
                 </h3>
             </div>
 
-            <!-- Card 1: Residence for Haldi & Mehandi -->
+            <!-- Card 1: Residence for Haldi & Mehandi (Direct Pin to Road No 6) -->
             <div class="royal-card">
                 <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--rose-dust); font-weight: 600;">
                     Home Residence (Haldi & Mehandi)
@@ -738,8 +707,8 @@
                 <p style="font-size: 0.82rem; color: #9bb7a5; margin-bottom: 22px;">
                     Venue for Quran Khani, Milad, Lagan (Haldi), and Rasm-E-Mehandi ceremonies.
                 </p>
-                <a href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJT9lBUZme9DkRrj0x_ATGRuE" target="_blank" class="btn-royal btn-outline-gold">
-                    <i class="fa-solid fa-location-dot"></i> Maps: Al-Falah Colony Road No 6
+                <a href="https://www.google.com/maps/search/?api=1&query=Road+No+6,+Al+Falah+Colony,+Pugmil,+Hazaribagh,+Jharkhand" target="_blank" class="btn-royal btn-outline-gold">
+                    <i class="fa-solid fa-location-dot"></i> Maps: Road No 6, Al-Falah Colony
                 </a>
             </div>
 
@@ -768,10 +737,9 @@
             </div>
         </section>
 
-        <!-- Divider -->
         <div class="gold-divider"></div>
 
-        <!-- 8. Mother's Sacred Prayer Card -->
+        <!-- MOTHER'S BLESSING -->
         <section class="royal-card" style="text-align: center; max-width: 740px; margin: 0 auto 70px;">
             <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: var(--rose-dust); font-weight: 600; margin-bottom: 8px;">
                 Maternal Prayers & Blessings
@@ -788,7 +756,7 @@
             </p>
         </section>
 
-        <!-- 9. Interactive Scratch Card -->
+        <!-- SCRATCH CARD -->
         <section style="text-align: center; margin-bottom: 85px;">
             <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold-primary); font-weight: 600;">
                 A Sacred Surprise
@@ -812,7 +780,7 @@
             <p style="font-size: 0.78rem; color: #9bb7a5;">Use your touch or mouse cursor to scratch the gold layer</p>
         </section>
 
-        <!-- 10. Wall of Blessings: Say Ameen -->
+        <!-- WALL OF BLESSINGS -->
         <section style="text-align: center; margin-bottom: 85px;">
             <h4 style="font-family: 'Cinzel', serif; font-size: 1.6rem; color: #ffffff; margin-bottom: 12px;">
                 Showers Of Duas
@@ -827,11 +795,10 @@
             </button>
 
             <p id="ameenFeedback" style="font-size: 0.85rem; color: var(--rose-blush); margin-top: 15px; min-height: 22px; font-weight: 500;">
-                <!-- Live Feedback -->
             </p>
         </section>
 
-        <!-- 11. 1-Tap Save Card Image (Keepsake) -->
+        <!-- KEEPSAKE CARD -->
         <section style="text-align: center; margin-bottom: 85px;">
             <span style="font-size: 0.74rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold-primary); font-weight: 600;">
                 Digital Keepsake
@@ -849,7 +816,7 @@
             </div>
         </section>
 
-        <!-- 12. Direct WhatsApp RSVP -->
+        <!-- WHATSAPP RSVP -->
         <section style="text-align: center; margin-bottom: 90px;">
             <h4 style="font-family: 'Cinzel', serif; font-size: 1.55rem; color: #ffffff; margin-bottom: 12px;">
                 Confirm Your Presence
@@ -862,9 +829,8 @@
             </a>
         </section>
 
-        <!-- 13. Footer with Family Compliments & Developer Stamp -->
+        <!-- FOOTER -->
         <footer style="text-align: center; padding-top: 45px; border-top: 1px solid rgba(230, 192, 100, 0.25);">
-            
             <div style="margin-bottom: 25px;">
                 <span style="font-size: 0.74rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold-primary); font-weight: 600;">
                     R.S.V.P
@@ -891,14 +857,11 @@
                     Developed by <strong style="color: #ffffff; font-size: 1rem;">Rameez Jilani</strong>
                 </p>
             </div>
-
         </footer>
 
     </main>
 
-    <!-- ======================================================== -->
-    <!-- CARD PREVIEW MODAL                                       -->
-    <!-- ======================================================== -->
+    <!-- CARD PREVIEW MODAL -->
     <div class="modal-overlay" id="cardModal">
         <div class="modal-box">
             <h3 style="font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--gold-primary); margin-bottom: 10px;">
@@ -923,14 +886,10 @@
         </div>
     </div>
 
-    <!-- ======================================================== -->
-    <!-- JAVASCRIPT & SECURITY LOGIC                              -->
-    <!-- ======================================================== -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        // 1. PRIVACY & ANTI-LEAK GUARDS
         document.addEventListener('contextmenu', (e) => e.preventDefault());
         document.addEventListener('keydown', (e) => {
-            // Block F12, Ctrl+Shift+I, Ctrl+U, Ctrl+S
             if (e.key === 'F12' || 
                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || 
                (e.ctrlKey && (e.key === 'u' || e.key === 's'))) {
@@ -938,26 +897,21 @@
             }
         });
 
-        // 2. OPEN PALACE GATES (1-TAP ENTRY)
         function openPalaceGate() {
             const overlay = document.getElementById('gateOverlay');
             overlay.classList.add('opening');
-            
             startSynthesizerMelody();
-
             confetti({
                 particleCount: 150,
                 spread: 90,
                 origin: { y: 0.5 },
                 colors: ['#e6c064', '#fce2e7', '#e5879a', '#ffffff', '#093924']
             });
-
             setTimeout(() => {
                 overlay.classList.add('gate-dismissed');
             }, 1450);
         }
 
-        // 3. MULTI-TONE WEB AUDIO SYNTHESIZER (PEACEFUL AMBIENT MELODY)
         let audioCtx = null;
         let isAudioPlaying = false;
         let melodyInterval = null;
@@ -1032,7 +986,6 @@
             }
         }
 
-        // 5. FALLING ROSE PETALS & PARTICLES
         const canvas = document.getElementById('petalCanvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -1092,7 +1045,6 @@
         }
         drawPetals();
 
-        // 6. LIVE BARAT ARRIVAL COUNTDOWN (Dec 2, 2026 at 10:00 PM)
         const baratTargetTime = new Date("Dec 2, 2026 22:00:00").getTime();
 
         function updateBaratTimer() {
@@ -1119,7 +1071,6 @@
         setInterval(updateBaratTimer, 1000);
         updateBaratTimer();
 
-        // 7. INTERACTIVE SAY AMEEN COUNTER
         let storedAmeenCount = parseInt(localStorage.getItem('saiba_abdul_final_ameen') || "312");
         document.getElementById('ameenCounterBadge').innerText = storedAmeenCount;
 
@@ -1141,7 +1092,6 @@
             setTimeout(() => { feedback.innerText = ""; }, 3800);
         }
 
-        // 8. METALLIC GOLD SCRATCH CARD
         const scratchCanvas = document.getElementById('scratchCanvas');
         const sCtx = scratchCanvas.getContext('2d');
         const scratchWrapper = document.querySelector('.scratch-card-wrapper');
@@ -1212,14 +1162,12 @@
         window.addEventListener('touchend', () => isScratching = false);
         scratchCanvas.addEventListener('touchmove', executeScratch, { passive: true });
 
-        // 9. 1080x1620 HD CARD IMAGE GENERATION
         function buildKeepsakeCanvas() {
             const offscreen = document.createElement('canvas');
             offscreen.width = 1080;
             offscreen.height = 1620;
             const c = offscreen.getContext('2d');
 
-            // Emerald Gradient Background
             const bg = c.createLinearGradient(0, 0, 0, 1620);
             bg.addColorStop(0, '#020f08');
             bg.addColorStop(0.5, '#052718');
@@ -1227,7 +1175,6 @@
             c.fillStyle = bg;
             c.fillRect(0, 0, 1080, 1620);
 
-            // Double Gold Borders
             c.strokeStyle = '#e6c064';
             c.lineWidth = 4;
             c.strokeRect(40, 40, 1000, 1540);
@@ -1236,7 +1183,6 @@
             c.lineWidth = 1.5;
             c.strokeRect(55, 55, 970, 1510);
 
-            // Bismillah
             c.textAlign = 'center';
             c.fillStyle = '#fff0c7';
             c.font = 'bold 46px serif';
@@ -1246,7 +1192,6 @@
             c.fillStyle = '#e6c064';
             c.fillText('IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL', 540, 195);
 
-            // Host Parents
             c.font = 'bold 24px serif';
             c.fillStyle = '#ffffff';
             c.fillText('MRS. & MR. MD. MANNUAR ANSARI', 540, 285);
@@ -1255,7 +1200,6 @@
             c.fillStyle = '#dcece2';
             c.fillText('request the pleasure of your company on the auspicious wedding of their beloved daughter', 540, 330);
 
-            // Couple
             c.font = 'bold 76px serif';
             c.fillStyle = '#ffffff';
             c.fillText('Saiba Perween', 540, 465);
@@ -1272,14 +1216,12 @@
             c.fillStyle = '#e6c064';
             c.fillText('S/o Late Md. Sharif (Raham, Tandwa, Chatra)', 540, 680);
 
-            // Divider Line
             c.strokeStyle = '#e6c064';
             c.beginPath();
             c.moveTo(280, 735);
             c.lineTo(800, 735);
             c.stroke();
 
-            // Programme Heading
             c.font = 'bold 24px serif';
             c.fillStyle = '#e6c064';
             c.fillText('PROGRAMME & TIMINGS', 540, 790);
@@ -1308,7 +1250,6 @@
             c.lineTo(800, 1110);
             c.stroke();
 
-            // Venue
             c.font = 'bold 24px serif';
             c.fillStyle = '#e6c064';
             c.fillText('VENUE', 540, 1165);
@@ -1325,7 +1266,6 @@
             c.fillStyle = '#fce2e7';
             c.fillText('Helpline: +91 7488870419', 540, 1300);
 
-            // RSVPs & Footer
             c.font = '18px sans-serif';
             c.fillStyle = '#9bb7a5';
             c.fillText('R.S.V.P: Md. Azaj Akhtar, Razi Ahmad, Rameez Jilani & All Relatives', 540, 1410);
