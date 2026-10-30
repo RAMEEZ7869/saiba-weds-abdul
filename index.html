@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 1. FULL PRIVACY & SEARCH-ENGINE SHIELD (NO LEAKS) -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+
+    <!-- 2. OFFICIAL WHATSAPP PREVIEW CARDS (NEVER LOOKS LIKE SPAM) -->
+    <title>Saiba Weds Abdul Kalam | Royal Wedding Invitation</title>
+    <meta name="title" content="Saiba Weds Abdul Kalam | Royal Wedding Invitation">
+    <meta name="description" content="Wedding Ceremony & Programme Invitation | Venue: Hotel Blue Diamond, Pugmil, Hazaribagh">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Saiba Weds Abdul Kalam | Official Wedding Invitation">
+    <meta property="og:description" content="Official Wedding Ceremony Invitation | 30 Nov – 03 Dec 2026. Tap to open the Royal Palace Invitation.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700;800;900&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        :root {
+            --emerald-void: #020f08;
+            --emerald-deep: #052115;
+            --emerald-rich: #093924;
+            --gold-shimmer: #fff0c7;
+            --gold-primary: #e6c064;
+            --gold-burnished: #b38421;
+            --rose-dust: #e5879a;
+            --rose-blush: #fce2e7;
+            --text-pearl: #f6fcf8;
+            --glass-card-bg: rgba(6, 33, 21, 0.68);
+            --glass-border: rgba(230, 192, 100, 0.32);
+            --shadow-royal: 0 20px 50px rgba(0, 0, 0, 0.55);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--emerald-void);
+            color: var(--text-pearl);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            line-height: 1.8;
+            user-select: none;
+        }
+
+        /* Ambient Lighting Blooms */
+        .glow-bloom-top {
+            position: fixed;
+            top: -15vw;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(9, 57, 36, 0.65) 0%, rgba(229, 135, 154, 0.15) 45%, transparent 75%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-bloom-bottom {
+            position: fixed;
+            bottom: -20vw;
+            right: -10vw;
+            width: 70vw;
+            height: 70vw;
+            background: radial-gradient(circle, rgba(179, 132, 33, 0.14) 0%, rgba(229, 135, 154, 0.09) 40%, transparent 75%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        #petalCanvas {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ======================================================== */
+        /* ROYAL PALACE 3D DOUBLE-GATE WITH VIP PASSCODE            */
+        /* ======================================================== */
+        .palace-gate-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 2400px;
+            background: radial-gradient(circle at center, #072a1b 0%, #03140c 55%, #010805 100%);
+            transition: opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 1.4s;
+        }
+
+        .palace-gate-overlay.gate-dismissed {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .gate-door {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 50vw;
+            background: 
+                radial-gradient(circle at center, rgba(229, 135, 154, 0.14), transparent 60%),
+                linear-gradient(155deg, #093b23 0%, #041c10 50%, #020c07 100%);
+            box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.95);
+            transition: transform 1.8s cubic-bezier(0.77, 0, 0.175, 1);
+            transform-style: preserve-3d;
+            overflow: hidden;
+        }
+
+        .gate-left {
+            left: 0;
+            transform-origin: left center;
+            border-right: 2.5px solid var(--gold-primary);
+        }
+
+        .gate-right {
+            right: 0;
+            transform-origin: right center;
+            border-left: 2.5px solid var(--gold-primary);
+        }
+
+        .gate-door::before {
+            content: '';
+            position: absolute;
+            inset: 26px 18px;
+            border: 1.5px solid rgba(230, 192, 100, 0.5);
+            border-radius: 20px;
+            background-image: 
+                radial-gradient(rgba(230, 192, 100, 0.3) 1.5px, transparent 1.5px),
+                linear-gradient(rgba(229, 135, 154, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(230, 192, 100, 0.08) 1px, transparent 1px);
+            background-size: 32px 32px;
+            box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.85);
+        }
+
+        .palace-gate-overlay.opening .gate-left { transform: rotateY(-118deg); }
+        .palace-gate-overlay.opening .gate-right { transform: rotateY(118deg); }
+
+        .gate-emblem-trigger {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            max-width: 440px;
+            width: 90%;
+            transition: transform 0.4s ease;
+        }
+
+        .wax-seal-medallion {
+            width: 135px;
+            height: 135px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 28%, #fff8e8 0%, #ecd07a 30%, #b8861e 75%, #442a02 100%);
+            border: 3px double rgba(255, 255, 255, 0.95);
+            box-shadow: 
+                0 0 50px rgba(230, 192, 100, 0.85), 
+                0 0 85px rgba(229, 135, 154, 0.5), 
+                inset 0 4px 18px rgba(255, 255, 255, 0.9),
+                0 25px 50px rgba(0, 0, 0, 0.95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: sealGlowPulse 2.8s infinite alternate;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .wax-seal-medallion::after {
+            content: '';
+            position: absolute;
+            inset: 7px;
+            border-radius: 50%;
+            border: 1.5px dashed rgba(68, 42, 2, 0.5);
+        }
+
+        @keyframes sealGlowPulse {
+            0% { box-shadow: 0 0 30px rgba(230, 192, 100, 0.55), 0 0 50px rgba(229, 135, 154, 0.35); }
+            100% { box-shadow: 0 0 65px rgba(230, 192, 100, 0.95), 0 0 95px rgba(229, 135, 154, 0.75); }
+        }
+
+        .seal-button-clickable {
+            cursor: pointer;
+            transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .seal-button-clickable:hover {
+            transform: scale(1.08);
+        }
+
+        .seal-button-clickable:active {
+            transform: scale(0.95);
+        }
+
+        .palace-gate-overlay.opening .gate-emblem-trigger {
+            transform: scale(0.08);
+            opacity: 0;
+            transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        /* Beating Hearts Animation */
+        @keyframes heartBeating {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.28); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.24); }
+            70% { transform: scale(1); }
+        }
+
+        .beating-heart {
+            display: inline-block;
+            color: #ff3366;
+            animation: heartBeating 1.3s infinite ease-in-out;
+            filter: drop-shadow(0 0 8px rgba(255, 51, 102, 0.8));
+            margin: 0 10px;
+        }
+
+        /* Editorial Layout */
+        .main-stage {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 85px 24px 140px;
+        }
+
+        .gold-divider {
+            width: 170px;
+            height: 1.5px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            margin: 55px auto;
+        }
+
+        .royal-card {
+            background: var(--glass-card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 38px 28px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: var(--shadow-royal);
+            margin-bottom: 45px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .royal-card:hover {
+            border-color: rgba(230, 192, 100, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Floating Fast Controls */
+        .floating-hub {
+            position: fixed;
+            bottom: 24px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .floating-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(4, 25, 16, 0.9);
+            border: 1.5px solid rgba(230, 192, 100, 0.65);
+            color: var(--gold-shimmer);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.12);
+            border-color: #ffffff;
+            box-shadow: 0 0 25px rgba(230, 192, 100, 0.8);
+        }
+
+        /* Chronological Timeline */
+        .timeline-container {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 38px;
+            border-left: 2px solid rgba(230, 192, 100, 0.35);
+            margin-bottom: 38px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gold-primary);
+            box-shadow: 0 0 12px var(--gold-primary);
+        }
+
+        .timeline-item.highlight-event {
+            border-left-color: var(--gold-primary);
+        }
+
+        .timeline-item.highlight-event::before {
+            background: #ffffff;
+            box-shadow: 0 0 16px #ffffff, 0 0 30px var(--gold-primary);
+            width: 14px;
+            height: 14px;
+            left: -8px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+            border-left-color: transparent;
+        }
+
+        /* Buttons */
+        .btn-royal {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 34px;
+            border-radius: 40px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.86rem;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            transition: all 0.35s ease;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #fff2cb, #e6c064 45%, #b38421 100%);
+            color: #03140b;
+            box-shadow: 0 10px 30px rgba(230, 192, 100, 0.4);
+            border: none;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(230, 192, 100, 0.65);
+        }
+
+        .btn-outline-gold {
+            background: transparent;
+            color: var(--gold-shimmer);
+            border: 1.5px solid rgba(230, 192, 100, 0.55);
+        }
+
+        .btn-outline-gold:hover {
+            background: rgba(230, 192, 100, 0.15);
+            border-color: var(--gold-primary);
+        }
+
+        /* Interactive Scratch Card */
+        .scratch-card-wrapper {
+            position: relative;
+            width: 320px;
+            height: 160px;
+            margin: 24px auto;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 2px solid var(--gold-primary);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .scratch-secret-content {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #07291a, #03140d);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            text-align: center;
+            color: var(--gold-shimmer);
+        }
+
+        #scratchCanvas {
+            position: absolute;
+            inset: 0;
+            cursor: crosshair;
+            z-index: 2;
+            touch-action: none;
+        }
+
+        /* Modal Preview */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.88);
+            backdrop-filter: blur(8px);
+            z-index: 999999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #041d11;
+            border: 2px solid var(--gold-primary);
+            border-radius: 22px;
+            max-width: 440px;
+            width: 100%;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+        }
+
+        @media (max-width: 640px) {
+            .hero-title { font-size: 3.5rem !important; }
+            .timeline-item { padding-left: 24px; }
+            .wax-seal-medallion { width: 115px; height: 115px; }
+            .gate-door::before { inset: 16px 10px; }
+            .scratch-card-wrapper { width: 280px; height: 150px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient Glowing Nebulas -->
+    <div class="glow-bloom-top"></div>
+    <div class="glow-bloom-bottom"></div>
+
+    <!-- Animated Petal Canvas -->
+    <canvas id="petalCanvas"></canvas>
+
+    <!-- ======================================================== -->
+    <!-- 1. ROYAL PALACE 3D DOUBLE-GATE ENTRANCE (1-TAP WAX SEAL) -->
+    <!-- ======================================================== -->
+    <div class="palace-gate-overlay" id="gateOverlay">
+        
+        <div class="gate-door gate-left"></div>
+
+        <div class="gate-emblem-trigger" id="gateEmblemContainer">
+            
+            <div style="font-family: 'Cinzel', serif; font-size: 0.82rem; letter-spacing: 4px; text-transform: uppercase; color: var(--rose-blush); margin-bottom: 20px; text-shadow: 0 2px 8px rgba(0,0,0,0.9);">
+                A Sacred Wedding Invitation
+            </div>
+
+            <!-- Glowing Wax Seal Monogram (1-Tap Entry) -->
+            <div class="wax-seal-medallion seal-button-clickable" onclick="openPalaceGate()" title="Tap To Enter">
+                <span style="font-family: 'Cinzel Decorative', serif; font-size: 2rem; font-weight: 900; color: #1a1002; letter-spacing: 2px;">
+                    S & A
+                </span>
+                <span style="font-family: 'Cinzel', serif; font-size: 0.58rem; font-weight: 800; color: #432b04; letter-spacing: 2px; text-transform: uppercase; margin-top: 2px;">
+                    The Royal Gate
+                </span>
+            </div>
+
+            <button onclick="openPalaceGate()" class="btn-royal btn-gold" style="padding: 12px 34px; font-size: 0.86rem; margin-top: 10px; box-shadow: 0 0 25px rgba(230, 192, 100, 0.6);">
+                <i class="fa-solid fa-envelope-open-text"></i> Tap Wax Seal To Enter
+            </button>
+
+            <p style="font-size: 0.82rem; color: var(--rose-dust); margin-top: 22px; letter-spacing: 1.5px; font-weight: 500;">
+                Developed by Rameez Jilani
+            </p>
+        </div>
+
+        <div class="gate-door gate-right"></div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- FLOATING FAST CONTROLS                                   -->
+    <!-- ======================================================== -->
+    <div class="floating-hub">
+        <button class="floating-btn" id="musicToggleBtn" onclick="toggleAudio()" title="Soundtrack Play/Pause">
+            <i class="fa-solid fa-volume-high" id="musicIcon"></i>
+        </button>
+        <button class="floating-btn" onclick="openCardPreview()" title="Download HD Invitation Card" style="color: var(--gold-primary); border-color: rgba(230, 192, 100, 0.8);">
+            <i class="fa-solid fa-download"></i>
+        </button>
+        <button class="floating-btn" onclick="shareWhatsApp()" title="Share on WhatsApp" style="color: #25D366; border-color: rgba(37, 211, 102, 0.6);">
+            <i class="fa-brands fa-whatsapp"></i>
+        </button>
+        <a href="tel:7488870419" class="floating-btn" title="Call Wedding Helpdesk" style="color: var(--rose-blush); border-color: rgba(229, 135, 154, 0.65);">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- MAIN INVITATION STAGE                                    -->
+    <!-- ======================================================== -->
+    <main class="main-stage">
+
+        <!-- 1. Bismillah SVG & Calligraphy Header -->
+        <header class="text-center" style="margin-bottom: 45px; text-align: center;">
+            <div style="font-family: 'Amiri', serif; font-size: 3.2rem; color: var(--gold-shimmer); line-height: 1.3; text-shadow: 0 4px 25px rgba(230, 192, 100, 0.45);">
+                بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+            </div>
+            <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 4px; color: var(--gold-primary); margin-top: 8px; font-weight: 500;">
+                In The Name Of Allah, The Most Gracious, The Most Merciful
+            </p>
+        </header>
+
+        <!-- 2. Quranic Verse (Surah Ar-Rum 30:21) -->
+        <section style="max-width: 720px; margin: 0 auto 55px; padding: 25px 20px; border-top: 1px solid rgba(230, 192, 100, 0.25); border-bottom: 1px solid rgba(230, 192, 100, 0.25); text-align: center;">
+            <p style="font-family: 'Amiri', serif; font-size: 1.65rem; color: var(--gold-shimmer); line-height: 2; direction: rtl; margin-bottom: 12px;">
+                « وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً »
+            </p>
+            <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.02rem; color: #d7eade; line-height: 1.85;">
+                "And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy."
+            </p>
+            <span style="display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: var(--rose-dust); margin-top: 10px; font-weight: 600;">
+                — Surah Ar-Rum (30:21)
+            </span>
+        </section>
+
+        <!-- 3. Cordial Invitation from Host Parents -->
+        <section style="text-align: center; margin-bottom: 60px;">
+            <p style="font-size: 0.84rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold-primary); font-weight: 600;">
+                Soliciting The Pleasure Of Your Gracious Presence
+            </p>
+            <h2 style="font-family: 'Cinzel', serif; font-size: 1.7rem; color: #ffffff; letter-spacing: 2px; font-weight: 700; margin: 12px 0 6px;">
+                MRS. & MR. MD. MANNUAR ANSARI
+            </h2>
+            <p style="font-family: 'Playfair Display', serif; font-size: 1.1rem; font-style: italic; color: #dcece2; max-width: 650px; margin: 0 auto; line-height: 1.8;">
+                cordially invite you and your family to grace the auspicious wedding ceremony of their beloved daughter
+            </p>
+        </section>
+
+        <!-- 4. The Bride & Groom Spotlight with Beating Love Hearts -->
+        <section style="text-align: center; margin-bottom: 75px;">
+            <!-- Bride -->
+            <div>
+                <h1 class="hero-title" style="font-family: 'Great Vibes', cursive; font-size: 5.4rem; color: #ffffff; text-shadow: 0 4px 25px rgba(230, 192, 100, 0.45); line-height: 1.1;">
+                    Saiba Perween
+                </h1>
+                <p style="font-family: 'Cinzel', serif; font-size: 0.88rem; letter-spacing: 3px; text-transform: uppercase; color: var(--rose-blush); margin-top: 4px;">
+                    D/o Md. Mannuar Ansari
+                </p>
+                <p style="font-size: 0.82rem; color: #9bb7a5; margin-top: 3px;">
+                    Al-Falah Colony, Pugmil, Dist- Hazaribagh (Jharkhand)
+                </p>
+            </div>
+
+            <!-- Weds Connector with Beating Love Hearts -->
+            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin: 28px auto;">
+                <span style="height: 1px; width: 75px; background: linear-gradient(90deg, transparent, var(--gold-primary));"></span>
+                <i class="fas fa-heart beating-heart"></i>
+                <span style="font-family: 'Cinzel Decorative', serif; font-size: 1.8rem; color: var(--gold-primary); font-weight: 700;">Weds</span>
+                <i class="fas fa-heart beating-heart"></i>
+                <span style="height: 1px; width: 75px; background: linear-gradient(-90deg, transparent, var(--gold-primary));"></span>
+            </div>
+
+            <!-- Groom -->
+            <div>
+                <h1 class="hero-title" style="font-family: 'Great Vibes', cursive; font-size: 5.4rem; color: #ffffff; text-shadow: 0 4px 25px rgba(230, 192, 100, 0.45); line-height: 1.1;">
+                    Abdul Kalam
+                </h1>
+                <p style="font-family: 'Cinzel', serif; font-size: 0.88rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-primary); margin-top: 4px;">
+                    S/o Late Md. Sharif
+                </p>
+                <p style="font-size: 0.82rem; color: #9bb7a5; margin-top: 3px;">
+                    At- Raham, Post- Raham, P.S- Tandwa, Dist- Chatra (Jharkhand)
+                </p>
+            </div>
+        </section>
+
+        <!-- 5. Exact Live Barat Countdown Timer (Dec 2, 2026 at 10:00 PM) -->
+        <section style="text-align: center; margin-bottom: 85px;">
+            <span style="font-size: 0.76rem; text-transform: uppercase; letter-spacing: 3px; color: var(--rose-dust); font-weight: 600;">
+                Counting Every Sacred Second
+            </span>
+            <h3 style="font-family: 'Cinzel', serif; font-size: 1.85rem; color: var(--gold-shimmer); margin: 6px 0 35px;">
+                Arrival Of The Grand Barat
+            </h3>
+
+            <div style="display: flex; justify-content: center; align-items: baseline; gap: 24px; flex-wrap: wrap;">
+                <div>
+                    <div id="days" style="font-family: 'Cinzel', serif; font-size: 3.5rem; font-weight: 800; color: #ffffff; line-height: 1; text-shadow: 0 0 15px rgba(230, 192, 100, 0.5);">00</div>
+                    <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold-primary); margin-top: 8px;">Days</div>
+                </div>
+                <div style="font-size: 2.2rem; color: rgba(230, 192, 100, 0.4); font-family: 'Cinzel', serif;">:</div>
+                <div>
+                    <div id="hours" style="font-family: 'Cinzel', serif; font-size: 3.5rem; font-weight: 800; color: #ffffff; line-height: 1; text-shadow: 0 0 15px rgba(230, 192, 100, 0.5);">00</div>
+                    <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold-primary); margin-top: 8px;">Hours</div>
+                </div>
+                <div style="font-size: 2.2rem; color: rgba(230, 192, 100, 0.4); font-family: 'Cinzel', serif;">:</div>
+                <div>
+                    <div id="minutes" style="font-family: 'Cinzel', serif; font-size: 3.5rem; font-weight: 800; color: #ffffff; line-height: 1; text-shadow: 0 0 15px rgba(230, 192, 100, 0.5);">00</div>
+                    <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold-primary); margin-top: 8px;">Minutes</div>
+                </div>
+                <div style="font-size: 2.2rem; color: rgba(230, 192, 100, 0.4); font-family: 'Cinzel', serif;">:</div>
+                <div>
+                    <div id="seconds" style="font-family: 'Cinzel', serif; font-size: 3.5rem; font-weight: 800; color: #ffffff; line-height: 1; text-shadow: 0 0 15px rgba(230, 192, 100, 0.5);">00</div>
+                    <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold-primary); margin-top: 8px;">Seconds</div>
+                </div>
+            </div>
+
+            <p style="font-size: 0.92rem; color: #d6ecdf; margin-top: 28px;">
+                <i class="fa-regular fa-clock" style="color: var(--gold-primary); margin-right: 6px;"></i>
+                Wednesday, 2nd December 2026 at 10:00 PM
+            </p>
+        </section>
+
+        <!-- Divider -->
+        <div class="gold-divider"></div>
+
+        <!-- 6. Ceremonial Programme Schedule -->
+        <section style="margin-bottom: 90px;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold-primary); font-weight: 600;">
+                    Ceremonial Order
+                </span>
+                <h3 style="font-family: 'Cinzel', serif; font-size: 2.1rem; color: #ffffff; margin-top: 6px;">
+                    The Wedding Programme
+                </h3>
+            </div>
+
+            <div class="timeline-container">
+                
+                <!-- Day 1 -->
+                <div class="timeline-item">
+                    <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--rose-dust); font-weight: 600;">
+                        Monday, 30th November 2026 • At Residence
+                    </span>
+                    <h4 style="font-family: 'Cinzel', serif; font-size: 1.35rem; color: #ffffff; margin: 4px 0 6px;">
+                        Quran Khani, Milad & Lagan (Haldi)
+                    </h4>
+                    <p style="font-size: 0.9rem; color: #9bb7a5;">
+                        • Quran Khani & Milad: <strong style="color: var(--gold-shimmer);">08:00 AM</strong><br>
+                        • Lagan (Rasm-E-Haldi): <strong style="color: var(--gold-shimmer);">04:00 PM</strong>
+                    </p>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="timeline-item">
+                    <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--rose-dust); font-weight: 600;">
+                        Tuesday, 1st December 2026 • At Residence
+                    </span>
+                    <h4 style="font-family: 'Cinzel', serif; font-size: 1.35rem; color: #ffffff; margin: 4px 0 6px;">
+                        Rasm-E-Mehandi
+                    </h4>
+                    <p style="font-size: 0.9rem; color: #9bb7a5;">
+                        • Traditional Henna Ceremony: <strong style="color: var(--gold-shimmer);">04:00 PM</strong>
+                    </p>
+                </div>
+
+                <!-- Day 3 (Main Events) -->
+                <div class="timeline-item highlight-event">
+                    <span style="font-size: 0.76rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold-primary); font-weight: 700;">
+                        Wednesday, 2nd December 2026 • At Hotel Blue Diamond
+                    </span>
+                    <h4 style="font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--gold-shimmer); margin: 4px 0 8px;">
+                        Dinner, Arrival of Barat & Nikah
+                    </h4>
+                    <p style="font-size: 0.93rem; color: #eaf3ed; line-height: 2;">
+                        • Dinner: <strong style="color: var(--gold-primary);">08:00 PM</strong><br>
+                        • Arrival of Barat: <strong style="color: var(--gold-primary);">10:00 PM</strong><br>
+                        • The Holy Nikah: <strong style="color: var(--gold-primary);">11:00 PM</strong>
+                    </p>
+                </div>
+
+                <!-- Day 4 -->
+                <div class="timeline-item">
+                    <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--rose-dust); font-weight: 600;">
+                        Thursday, 3rd December 2026
+                    </span>
+                    <h4 style="font-family: 'Cinzel', serif; font-size: 1.35rem; color: #ffffff; margin: 4px 0 6px;">
+                        Rukhsati
+                    </h4>
+                    <p style="font-size: 0.9rem; color: #9bb7a5;">
+                        • Bidding farewell with eternal prayers: <strong style="color: var(--gold-shimmer);">07:00 AM</strong>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="gold-divider"></div>
+
+        <!-- 7. Venues & Maps (Organized into 2 Distinct Cards) -->
+        <section style="margin-bottom: 90px;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold-primary); font-weight: 600;">
+                    Destinations & Guide
+                </span>
+                <h3 style="font-family: 'Cinzel', serif; font-size: 2.1rem; color: #ffffff; margin-top: 6px;">
+                    Ceremony Venues
+                </h3>
+            </div>
+
+            <!-- Card 1: Residence for Haldi & Mehandi -->
+            <div class="royal-card">
+                <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--rose-dust); font-weight: 600;">
+                    Home Residence (Haldi & Mehandi)
+                </span>
+                <h4 style="font-family: 'Cinzel', serif; font-size: 1.55rem; color: #ffffff; margin: 8px 0 6px;">
+                    Al-Falah Colony, Road No 6
+                </h4>
+                <p style="font-size: 0.92rem; color: #d7eade; margin-bottom: 8px;">
+                    Pugmil, Hazaribagh (Beside Fahima Academy)
+                </p>
+                <p style="font-size: 0.82rem; color: #9bb7a5; margin-bottom: 22px;">
+                    Venue for Quran Khani, Milad, Lagan (Haldi), and Rasm-E-Mehandi ceremonies.
+                </p>
+                <a href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJT9lBUZme9DkRrj0x_ATGRuE" target="_blank" class="btn-royal btn-outline-gold">
+                    <i class="fa-solid fa-location-dot"></i> Maps: Al-Falah Colony Road No 6
+                </a>
+            </div>
+
+            <!-- Card 2: Hotel Blue Diamond for Dinner, Barat & Nikah -->
+            <div class="royal-card">
+                <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold-primary); font-weight: 700;">
+                    The Wedding Banquet Venue (Dinner, Barat & Nikah)
+                </span>
+                <h4 style="font-family: 'Cinzel', serif; font-size: 1.65rem; color: var(--gold-shimmer); margin: 8px 0 6px;">
+                    Hotel Blue Diamond
+                </h4>
+                <p style="font-size: 0.94rem; color: #ffffff; margin-bottom: 8px;">
+                    Pugmil, Hazaribagh, Jharkhand
+                </p>
+                <p style="font-size: 0.82rem; color: #9bb7a5; margin-bottom: 24px;">
+                    Venue for Dinner (08:00 PM), Arrival of Barat (10:00 PM), and The Holy Nikah (11:00 PM).
+                </p>
+                <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                    <a href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJv54aDvOf9DkRWd9qlGZ3gdA" target="_blank" class="btn-royal btn-gold">
+                        <i class="fa-solid fa-diamond-turn-right"></i> Navigate to Hotel Blue Diamond
+                    </a>
+                    <a href="tel:7488870419" class="btn-royal btn-outline-gold">
+                        <i class="fa-solid fa-phone"></i> Helpline: +91 7488870419
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="gold-divider"></div>
+
+        <!-- 8. Mother's Sacred Prayer Card -->
+        <section class="royal-card" style="text-align: center; max-width: 740px; margin: 0 auto 70px;">
+            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: var(--rose-dust); font-weight: 600; margin-bottom: 8px;">
+                Maternal Prayers & Blessings
+            </div>
+            <h3 style="font-family: 'Cinzel', serif; font-size: 1.85rem; color: #ffffff; margin-bottom: 18px;">
+                Blessings For Our Beloved Daughter Saiba
+            </h3>
+            <p style="font-family: 'Playfair Display', serif; font-size: 1.1rem; font-style: italic; color: #eaf3ed; line-height: 1.95; margin-bottom: 24px;">
+                "My beloved daughter Saiba, you have brought endless warmth, grace, and light into our lives. As you step into this sacred covenant of Nikah with Abdul, my heart overflows with prayers for you both. May Allah Almighty illuminate your home with eternal peace, respect, affection, and abundant barakah. May every day of your married life be filled with happiness."
+            </p>
+            <p style="font-family: 'Cinzel', serif; font-size: 0.95rem; color: var(--gold-primary); letter-spacing: 1.5px;">
+                With endless maternal love & duas,<br>
+                <strong style="color: #ffffff; font-size: 1.18rem;">Mrs. Kaushar Rasheed Shabnam</strong>
+            </p>
+        </section>
+
+        <!-- 9. Interactive Scratch Card -->
+        <section style="text-align: center; margin-bottom: 85px;">
+            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold-primary); font-weight: 600;">
+                A Sacred Surprise
+            </span>
+            <h3 style="font-family: 'Cinzel', serif; font-size: 1.7rem; color: #ffffff; margin: 6px 0 16px;">
+                Scratch To Reveal The Prophetic Blessing
+            </h3>
+            
+            <div class="scratch-card-wrapper">
+                <div class="scratch-secret-content">
+                    <i class="fa-solid fa-hands-praying" style="font-size: 1.6rem; color: var(--gold-primary); margin-bottom: 6px;"></i>
+                    <p style="font-family: 'Amiri', serif; font-size: 1.35rem; color: #ffffff; line-height: 1.3;">
+                        بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
+                    </p>
+                    <p style="font-size: 0.76rem; color: var(--rose-blush); margin-top: 4px;">
+                        "May Allah bless you, shower His blessings upon you, and unite you both in goodness."
+                    </p>
+                </div>
+                <canvas id="scratchCanvas"></canvas>
+            </div>
+            <p style="font-size: 0.78rem; color: #9bb7a5;">Use your touch or mouse cursor to scratch the gold layer</p>
+        </section>
+
+        <!-- 10. Wall of Blessings: Say Ameen -->
+        <section style="text-align: center; margin-bottom: 85px;">
+            <h4 style="font-family: 'Cinzel', serif; font-size: 1.6rem; color: #ffffff; margin-bottom: 12px;">
+                Showers Of Duas
+            </h4>
+            <p style="font-size: 0.9rem; color: #9bb7a5; margin-bottom: 25px;">
+                Tap below to recite your sincere Ameen for the couple's blissful marriage.
+            </p>
+
+            <button onclick="reciteAmeen()" class="btn-royal btn-gold" style="padding: 15px 42px; font-size: 0.96rem;">
+                <span>🤲 Tap To Say Ameen</span>
+                <span id="ameenCounterBadge" style="background: rgba(4, 25, 15, 0.5); color: #ffffff; padding: 3px 14px; border-radius: 20px; font-size: 0.85rem; margin-left: 8px;">312</span>
+            </button>
+
+            <p id="ameenFeedback" style="font-size: 0.85rem; color: var(--rose-blush); margin-top: 15px; min-height: 22px; font-weight: 500;">
+                <!-- Live Feedback -->
+            </p>
+        </section>
+
+        <!-- 11. 1-Tap Save Card Image (Keepsake) -->
+        <section style="text-align: center; margin-bottom: 85px;">
+            <span style="font-size: 0.74rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold-primary); font-weight: 600;">
+                Digital Keepsake
+            </span>
+            <h4 style="font-family: 'Cinzel', serif; font-size: 1.65rem; color: #ffffff; margin: 8px 0 14px;">
+                Save Wedding Invitation Card
+            </h4>
+            <p style="font-size: 0.9rem; color: #9bb7a5; max-width: 540px; margin: 0 auto 28px;">
+                Keep a digital copy of Saiba & Abdul's royal invitation card saved directly into your device's photo gallery.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <button onclick="openCardPreview()" class="btn-royal btn-gold">
+                    <i class="fa-solid fa-image"></i> View & Save Card Image
+                </button>
+            </div>
+        </section>
+
+        <!-- 12. Direct WhatsApp RSVP -->
+        <section style="text-align: center; margin-bottom: 90px;">
+            <h4 style="font-family: 'Cinzel', serif; font-size: 1.55rem; color: #ffffff; margin-bottom: 12px;">
+                Confirm Your Presence
+            </h4>
+            <p style="font-size: 0.9rem; color: #9bb7a5; max-width: 520px; margin: 0 auto 28px;">
+                Send your warm greetings and RSVP directly to the family on WhatsApp.
+            </p>
+            <a href="https://wa.me/917488870419?text=Assalamu%20Alaikum!%20Heartiest%20congratulations%20on%20the%20sacred%20wedding%20of%20Saiba%20Perween%20and%20Abdul%20Kalam.%20May%20Allah%20SWT%20shower%20this%20blessed%20couple%20with%20eternal%20peace,%20respect,%20and%20barakah." target="_blank" class="btn-royal" style="background: #25D366; color: #ffffff; font-weight: 700; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);">
+                <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i> Send Greetings On WhatsApp
+            </a>
+        </section>
+
+        <!-- 13. Footer with Family Compliments & Developer Stamp -->
+        <footer style="text-align: center; padding-top: 45px; border-top: 1px solid rgba(230, 192, 100, 0.25);">
+            
+            <div style="margin-bottom: 25px;">
+                <span style="font-size: 0.74rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold-primary); font-weight: 600;">
+                    R.S.V.P
+                </span>
+                <p style="font-family: 'Cinzel', serif; font-size: 1.25rem; color: #ffffff; margin-top: 6px; font-weight: 600;">
+                    Md. Azaj Akhtar • Razi Ahmad • Rameez Jilani
+                </p>
+                <p style="font-size: 0.82rem; color: #9bb7a5; margin-top: 4px;">
+                    & All Relatives & Friends
+                </p>
+            </div>
+
+            <div style="margin-bottom: 40px;">
+                <span style="font-size: 0.74rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold-primary); font-weight: 600;">
+                    With Best Compliments From
+                </span>
+                <p style="font-family: 'Cinzel', serif; font-size: 1.35rem; color: var(--gold-shimmer); font-weight: 700; margin-top: 6px;">
+                    Md. Mannuar Ansari & Family
+                </p>
+            </div>
+
+            <div style="padding-top: 25px;">
+                <p style="font-size: 0.88rem; color: var(--rose-blush); letter-spacing: 1.5px; font-weight: 500;">
+                    Developed by <strong style="color: #ffffff; font-size: 1rem;">Rameez Jilani</strong>
+                </p>
+            </div>
+
+        </footer>
+
+    </main>
+
+    <!-- ======================================================== -->
+    <!-- CARD PREVIEW MODAL                                       -->
+    <!-- ======================================================== -->
+    <div class="modal-overlay" id="cardModal">
+        <div class="modal-box">
+            <h3 style="font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--gold-primary); margin-bottom: 10px;">
+                Wedding Keepsake Card
+            </h3>
+            <p style="font-size: 0.82rem; color: #9bb7a5; margin-bottom: 18px;">
+                Your high-definition digital wedding card is ready.
+            </p>
+            
+            <div style="border-radius: 14px; overflow: hidden; border: 1.5px solid var(--gold-primary); margin-bottom: 20px; max-height: 55vh; overflow-y: auto;">
+                <img id="generatedCardImg" src="" alt="Wedding Invitation Card" style="width: 100%; display: block;">
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+                <a id="downloadImgBtn" href="#" download="Saiba-Weds-Abdul-Wedding-Card.png" class="btn-royal btn-gold" style="padding: 10px 24px; font-size: 0.82rem;">
+                    <i class="fa-solid fa-download"></i> Save Image
+                </a>
+                <button onclick="closeCardPreview()" class="btn-royal btn-outline-gold" style="padding: 10px 24px; font-size: 0.82rem;">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- JAVASCRIPT & SECURITY LOGIC                              -->
+    <!-- ======================================================== -->
+    <script>
+        // 1. PRIVACY & ANTI-LEAK GUARDS
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+        document.addEventListener('keydown', (e) => {
+            // Block F12, Ctrl+Shift+I, Ctrl+U, Ctrl+S
+            if (e.key === 'F12' || 
+               (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || 
+               (e.ctrlKey && (e.key === 'u' || e.key === 's'))) {
+                e.preventDefault();
+            }
+        });
+
+        // 2. OPEN PALACE GATES (1-TAP ENTRY)
+        function openPalaceGate() {
+            const overlay = document.getElementById('gateOverlay');
+            overlay.classList.add('opening');
+            
+            startSynthesizerMelody();
+
+            confetti({
+                particleCount: 150,
+                spread: 90,
+                origin: { y: 0.5 },
+                colors: ['#e6c064', '#fce2e7', '#e5879a', '#ffffff', '#093924']
+            });
+
+            setTimeout(() => {
+                overlay.classList.add('gate-dismissed');
+            }, 1450);
+        }
+
+        // 3. MULTI-TONE WEB AUDIO SYNTHESIZER (PEACEFUL AMBIENT MELODY)
+        let audioCtx = null;
+        let isAudioPlaying = false;
+        let melodyInterval = null;
+
+        function getAudioContext() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            return audioCtx;
+        }
+
+        const acousticNotes = [220.00, 246.94, 277.18, 329.63, 369.99, 440.00, 493.88, 554.37];
+
+        function playSoftNote(freq, duration = 3.5) {
+            const ctx = getAudioContext();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            const filter = ctx.createBiquadFilter();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, ctx.currentTime);
+
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(650, ctx.currentTime);
+
+            gain.gain.setValueAtTime(0.0001, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.028, ctx.currentTime + 0.6);
+            gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
+
+            osc.connect(filter);
+            filter.connect(gain);
+            gain.connect(ctx.destination);
+
+            osc.start();
+            osc.stop(ctx.currentTime + duration);
+        }
+
+        function startSynthesizerMelody() {
+            getAudioContext();
+            isAudioPlaying = true;
+            document.getElementById('musicIcon').className = 'fa-solid fa-volume-high';
+
+            playSoftNote(220.00, 4.5);
+            setTimeout(() => playSoftNote(277.18, 4.0), 300);
+            setTimeout(() => playSoftNote(329.63, 4.2), 600);
+
+            if (melodyInterval) clearInterval(melodyInterval);
+            melodyInterval = setInterval(() => {
+                if (!isAudioPlaying) return;
+                const randomNote = acousticNotes[Math.floor(Math.random() * acousticNotes.length)];
+                playSoftNote(randomNote, 3.8);
+            }, 1800);
+        }
+
+        function stopSynthesizerMelody() {
+            isAudioPlaying = false;
+            if (melodyInterval) {
+                clearInterval(melodyInterval);
+                melodyInterval = null;
+            }
+            document.getElementById('musicIcon').className = 'fa-solid fa-volume-xmark';
+        }
+
+        function toggleAudio() {
+            if (isAudioPlaying) {
+                stopSynthesizerMelody();
+            } else {
+                startSynthesizerMelody();
+            }
+        }
+
+        // 5. FALLING ROSE PETALS & PARTICLES
+        const canvas = document.getElementById('petalCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizePetalsCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizePetalsCanvas);
+        resizePetalsCanvas();
+
+        for (let i = 0; i < 38; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 5 + 3,
+                speedY: Math.random() * 0.65 + 0.35,
+                speedX: Math.sin(Math.random() * Math.PI) * 0.45,
+                angle: Math.random() * Math.PI * 2,
+                spin: (Math.random() - 0.5) * 0.015,
+                isPetal: i % 2 === 0,
+                color: i % 2 === 0 ? 'rgba(252, 226, 231, 0.7)' : 'rgba(230, 192, 100, 0.65)'
+            });
+        }
+
+        function drawPetals() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.y += p.speedY;
+                p.x += p.speedX;
+                p.angle += p.spin;
+
+                if (p.y > canvas.height) {
+                    p.y = -10;
+                    p.x = Math.random() * canvas.width;
+                }
+
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.rotate(p.angle);
+                ctx.fillStyle = p.color;
+
+                if (p.isPetal) {
+                    ctx.beginPath();
+                    ctx.ellipse(0, 0, p.size, p.size * 1.5, Math.PI / 4, 0, Math.PI * 2);
+                    ctx.fill();
+                } else {
+                    ctx.beginPath();
+                    ctx.arc(0, 0, p.size * 0.45, 0, Math.PI * 2);
+                    ctx.shadowBlur = 8;
+                    ctx.shadowColor = '#e6c064';
+                    ctx.fill();
+                }
+                ctx.restore();
+            });
+            requestAnimationFrame(drawPetals);
+        }
+        drawPetals();
+
+        // 6. LIVE BARAT ARRIVAL COUNTDOWN (Dec 2, 2026 at 10:00 PM)
+        const baratTargetTime = new Date("Dec 2, 2026 22:00:00").getTime();
+
+        function updateBaratTimer() {
+            const now = new Date().getTime();
+            const difference = baratTargetTime - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = String(days).padStart(2, '0');
+                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+            } else {
+                document.getElementById('days').innerText = "00";
+                document.getElementById('hours').innerText = "00";
+                document.getElementById('minutes').innerText = "00";
+                document.getElementById('seconds').innerText = "00";
+            }
+        }
+        setInterval(updateBaratTimer, 1000);
+        updateBaratTimer();
+
+        // 7. INTERACTIVE SAY AMEEN COUNTER
+        let storedAmeenCount = parseInt(localStorage.getItem('saiba_abdul_final_ameen') || "312");
+        document.getElementById('ameenCounterBadge').innerText = storedAmeenCount;
+
+        function reciteAmeen() {
+            storedAmeenCount++;
+            localStorage.setItem('saiba_abdul_final_ameen', storedAmeenCount);
+            document.getElementById('ameenCounterBadge').innerText = storedAmeenCount;
+
+            const feedback = document.getElementById('ameenFeedback');
+            feedback.innerText = "✨ JazakAllah Khair! Your Ameen & prayers have been recorded.";
+
+            confetti({
+                particleCount: 50,
+                spread: 65,
+                origin: { y: 0.8 },
+                colors: ['#fce2e7', '#e6c064', '#ffffff']
+            });
+
+            setTimeout(() => { feedback.innerText = ""; }, 3800);
+        }
+
+        // 8. METALLIC GOLD SCRATCH CARD
+        const scratchCanvas = document.getElementById('scratchCanvas');
+        const sCtx = scratchCanvas.getContext('2d');
+        const scratchWrapper = document.querySelector('.scratch-card-wrapper');
+        scratchCanvas.width = scratchWrapper.clientWidth;
+        scratchCanvas.height = scratchWrapper.clientHeight;
+
+        function renderGoldScratchLayer() {
+            const goldGrad = sCtx.createLinearGradient(0, 0, scratchCanvas.width, scratchCanvas.height);
+            goldGrad.addColorStop(0, '#fff4d6');
+            goldGrad.addColorStop(0.3, '#e6c064');
+            goldGrad.addColorStop(0.7, '#b38421');
+            goldGrad.addColorStop(1, '#664a10');
+            sCtx.fillStyle = goldGrad;
+            sCtx.fillRect(0, 0, scratchCanvas.width, scratchCanvas.height);
+
+            sCtx.fillStyle = '#111111';
+            sCtx.font = 'bold 13px Cinzel, serif';
+            sCtx.textAlign = 'center';
+            sCtx.fillText('SCRATCH TO REVEAL BLESSING', scratchCanvas.width / 2, scratchCanvas.height / 2 + 5);
+        }
+        renderGoldScratchLayer();
+
+        let isScratching = false;
+        let clearedPercentTriggered = false;
+
+        function checkScratchPercentage() {
+            if (clearedPercentTriggered) return;
+            const imgData = sCtx.getImageData(0, 0, scratchCanvas.width, scratchCanvas.height);
+            let transparentPixels = 0;
+            const totalPixels = imgData.data.length / 4;
+
+            for (let i = 3; i < imgData.data.length; i += 4) {
+                if (imgData.data[i] === 0) transparentPixels++;
+            }
+
+            if ((transparentPixels / totalPixels) > 0.40) {
+                clearedPercentTriggered = true;
+                confetti({
+                    particleCount: 75,
+                    spread: 80,
+                    origin: { y: 0.7 },
+                    colors: ['#e6c064', '#ffffff', '#e5879a']
+                });
+            }
+        }
+
+        function executeScratch(e) {
+            if (!isScratching) return;
+            const rect = scratchCanvas.getBoundingClientRect();
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            const x = clientX - rect.left;
+            const y = clientY - rect.top;
+
+            sCtx.globalCompositeOperation = 'destination-out';
+            sCtx.beginPath();
+            sCtx.arc(x, y, 22, 0, Math.PI * 2);
+            sCtx.fill();
+
+            checkScratchPercentage();
+        }
+
+        scratchCanvas.addEventListener('mousedown', () => isScratching = true);
+        window.addEventListener('mouseup', () => isScratching = false);
+        scratchCanvas.addEventListener('mousemove', executeScratch);
+
+        scratchCanvas.addEventListener('touchstart', (e) => { isScratching = true; executeScratch(e); }, { passive: true });
+        window.addEventListener('touchend', () => isScratching = false);
+        scratchCanvas.addEventListener('touchmove', executeScratch, { passive: true });
+
+        // 9. 1080x1620 HD CARD IMAGE GENERATION
+        function buildKeepsakeCanvas() {
+            const offscreen = document.createElement('canvas');
+            offscreen.width = 1080;
+            offscreen.height = 1620;
+            const c = offscreen.getContext('2d');
+
+            // Emerald Gradient Background
+            const bg = c.createLinearGradient(0, 0, 0, 1620);
+            bg.addColorStop(0, '#020f08');
+            bg.addColorStop(0.5, '#052718');
+            bg.addColorStop(1, '#020d07');
+            c.fillStyle = bg;
+            c.fillRect(0, 0, 1080, 1620);
+
+            // Double Gold Borders
+            c.strokeStyle = '#e6c064';
+            c.lineWidth = 4;
+            c.strokeRect(40, 40, 1000, 1540);
+
+            c.strokeStyle = 'rgba(229, 135, 154, 0.45)';
+            c.lineWidth = 1.5;
+            c.strokeRect(55, 55, 970, 1510);
+
+            // Bismillah
+            c.textAlign = 'center';
+            c.fillStyle = '#fff0c7';
+            c.font = 'bold 46px serif';
+            c.fillText('بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ', 540, 150);
+
+            c.font = '600 17px sans-serif';
+            c.fillStyle = '#e6c064';
+            c.fillText('IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL', 540, 195);
+
+            // Host Parents
+            c.font = 'bold 24px serif';
+            c.fillStyle = '#ffffff';
+            c.fillText('MRS. & MR. MD. MANNUAR ANSARI', 540, 285);
+
+            c.font = 'italic 20px serif';
+            c.fillStyle = '#dcece2';
+            c.fillText('request the pleasure of your company on the auspicious wedding of their beloved daughter', 540, 330);
+
+            // Couple
+            c.font = 'bold 76px serif';
+            c.fillStyle = '#ffffff';
+            c.fillText('Saiba Perween', 540, 465);
+
+            c.font = 'bold 26px serif';
+            c.fillStyle = '#e5879a';
+            c.fillText('♥  Weds  ♥', 540, 530);
+
+            c.font = 'bold 76px serif';
+            c.fillStyle = '#ffffff';
+            c.fillText('Abdul Kalam', 540, 635);
+
+            c.font = '19px sans-serif';
+            c.fillStyle = '#e6c064';
+            c.fillText('S/o Late Md. Sharif (Raham, Tandwa, Chatra)', 540, 680);
+
+            // Divider Line
+            c.strokeStyle = '#e6c064';
+            c.beginPath();
+            c.moveTo(280, 735);
+            c.lineTo(800, 735);
+            c.stroke();
+
+            // Programme Heading
+            c.font = 'bold 24px serif';
+            c.fillStyle = '#e6c064';
+            c.fillText('PROGRAMME & TIMINGS', 540, 790);
+
+            c.textAlign = 'left';
+            c.font = '20px sans-serif';
+            c.fillStyle = '#ffffff';
+
+            const scheduleList = [
+                '• 30 Nov 2026 (Mon): Quran Khani (08:00 AM) & Lagan / Haldi (04:00 PM)',
+                '• 01 Dec 2026 (Tue): Rasm-E-Mehandi (04:00 PM)',
+                '• 02 Dec 2026 (Wed): Dinner (08:00 PM) | Arrival of Barat (10:00 PM) | Nikah (11:00 PM)',
+                '• 03 Dec 2026 (Thu): Rukhsati (07:00 AM)'
+            ];
+
+            let yPos = 850;
+            scheduleList.forEach(line => {
+                c.fillText(line, 100, yPos);
+                yPos += 55;
+            });
+
+            c.textAlign = 'center';
+            c.strokeStyle = '#e6c064';
+            c.beginPath();
+            c.moveTo(280, 1110);
+            c.lineTo(800, 1110);
+            c.stroke();
+
+            // Venue
+            c.font = 'bold 24px serif';
+            c.fillStyle = '#e6c064';
+            c.fillText('VENUE', 540, 1165);
+
+            c.font = 'bold 32px serif';
+            c.fillStyle = '#ffffff';
+            c.fillText('HOTEL BLUE DIAMOND', 540, 1215);
+
+            c.font = '20px sans-serif';
+            c.fillStyle = '#d6e8dc';
+            c.fillText('Pugmil, Hazaribagh (Jharkhand)', 540, 1255);
+
+            c.font = '19px sans-serif';
+            c.fillStyle = '#fce2e7';
+            c.fillText('Helpline: +91 7488870419', 540, 1300);
+
+            // RSVPs & Footer
+            c.font = '18px sans-serif';
+            c.fillStyle = '#9bb7a5';
+            c.fillText('R.S.V.P: Md. Azaj Akhtar, Razi Ahmad, Rameez Jilani & All Relatives', 540, 1410);
+
+            c.font = 'italic 16px sans-serif';
+            c.fillStyle = '#e5879a';
+            c.fillText('Developed by Rameez Jilani', 540, 1495);
+
+            return offscreen.toDataURL('image/png');
+        }
+
+        function openCardPreview() {
+            const dataUrl = buildKeepsakeCanvas();
+            document.getElementById('generatedCardImg').src = dataUrl;
+            document.getElementById('downloadImgBtn').href = dataUrl;
+            document.getElementById('cardModal').classList.add('active');
+        }
+
+        function closeCardPreview() {
+            document.getElementById('cardModal').classList.remove('active');
+        }
+
+        function shareWhatsApp() {
+            const text = `*بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ*\n\nYou are cordially invited to grace the sacred wedding of:\n*Saiba Perween* Weds *Abdul Kalam*\n\n📅 *Schedule:* 30th Nov – 3rd Dec 2026\n📍 *Venue:* Hotel Blue Diamond, Pugmil, Hazaribagh\n\n✨ Tap below to open your digital royal invitation:\n${window.location.href}`;
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
